@@ -10,3 +10,9 @@ services:
       - email_portfolio=${email_portfolio}
       - assistent_login=${assistent_login}
       - assistent_password=${assistent_password}
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    external: true
