@@ -5,7 +5,7 @@ from mail.sender import Mailer
 from flask_cors import CORS
 import os
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://pawelmatejko.pl"}})  # Replace with your Vue app's domain
+CORS(app, resources={r"/*": {"origins": "http://pawelmatejko.pl", "supports_credentials": True}})
 email_portfolio = str(os.getenv("email_portfolio"))
 
 @app.route('/send_email', methods=['POST'])
