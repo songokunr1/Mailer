@@ -5,7 +5,8 @@ from mail.sender import Mailer
 from flask_cors import CORS
 import os
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://pawelmatejko.pl", "supports_credentials": True}})
+CORS(app, resources={r"/*": {"origins": ["http://pawelmatejko.pl", "http://www.pawelmatejko.pl"],
+                             "methods": ["GET", "HEAD", "POST", "OPTIONS"]}})
 email_portfolio = str(os.getenv("email_portfolio"))
 
 @app.route('/send_email', methods=['POST'])
